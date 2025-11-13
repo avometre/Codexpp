@@ -1,0 +1,6 @@
+include LICENSE
+include README.md
+recursive-include codexpp/resources *.toml
+recursive-include codexpp/resources *.md
+recursive-include codexpp/resources *.py
+

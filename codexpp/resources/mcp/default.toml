@@ -1,0 +1,63 @@
+[[servers]]
+id = "filesystem"
+label = "Filesystem Server"
+summary = "Her dosya işlemi için gerekli. Dosya sistemi üzerinde okuma/yazma erişimi sağlar."
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-filesystem@latest"]
+transport = "stdio"
+auto_start = true
+tags = ["core", "local", "popular", "essential"]
+
+
+[[servers]]
+id = "github"
+label = "GitHub Server"
+summary = "Uzak repository yönetimi. GitHub API üzerinden repository, issue ve pull request verilerine erişim sağlar."
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-github@latest"]
+transport = "stdio"
+auto_start = false
+tags = ["cloud", "github", "popular"]
+
+[[servers]]
+id = "sequential-thinking"
+label = "Sequential Thinking"
+summary = "Karmaşık problem çözme. Adım adım düşünme ve problem analizi için kullanılır."
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-sequential-thinking@latest"]
+transport = "stdio"
+auto_start = false
+tags = ["thinking", "problem-solving", "popular"]
+
+[[servers]]
+id = "memory"
+label = "Memory Server"
+summary = "Proje bağlamını hatırlama. Proje geçmişi, notlar ve bağlam bilgilerini saklar ve geri çağırır."
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-memory@latest"]
+transport = "stdio"
+auto_start = false
+tags = ["memory", "context", "popular"]
+
+[[servers]]
+id = "context7"
+label = "Context7 - Güncel Dokümantasyon"
+summary = "Güncel dokümantasyon. En güncel kütüphane dokümantasyonları ve kod örneklerini sağlar. Python, React gibi popüler kütüphanelerin en son sürümlerine ait bilgileri anında erişilebilir hale getirir."
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@latest"]
+transport = "stdio"
+auto_start = true
+tags = ["docs", "popular"]
+
+[[servers]]
+id = "puppeteer"
+label = "Puppeteer Server"
+summary = "Browser otomasyonu. Web tarayıcı otomasyonu için Puppeteer kullanır. Web sayfalarını açma, ekran görüntüsü alma ve web scraping işlemleri yapar."
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-puppeteer@latest"]
+transport = "stdio"
+auto_start = false
+tags = ["web", "automation", "popular"]
+
+[servers.env]
+GITHUB_TOKEN = ""

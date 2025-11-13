@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+ 
+ [project]
+ name = "codexpp"
+ version = "0.4.1"
+ description = "Persona-driven command pack and MCP setup for Codex CLI"
+ readme = "README.md"
+ requires-python = ">=3.11"
+ license = "MIT"
+authors = [
+  { name = "avometre", email = "ohmkanunu1923@gmail.com" }
+]
+keywords = ["codex", "cli", "ai", "development", "framework", "mcp", "prompts", "codex-cli"]
+ classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Build Tools"
+]
+ dependencies = []
+ 
+[project.urls]
+Homepage = "https://github.com/avometre/codexpp"
+Repository = "https://github.com/avometre/codexpp"
+Issues = "https://github.com/avometre/codexpp/issues"
+
+[project.scripts]
+codexpp = "codexpp.cli:main"
