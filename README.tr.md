@@ -5,7 +5,6 @@
 [![PyPI](https://img.shields.io/pypi/v/codexpp)](https://pypi.org/project/codexpp/)
 [![Python](https://img.shields.io/pypi/pyversions/codexpp)](https://pypi.org/project/codexpp/)
 [![Lisans](https://img.shields.io/pypi/l/codexpp)](LICENSE)
-[![CI](https://github.com/avometre/Codexpp/actions/workflows/ci.yml/badge.svg)](https://github.com/avometre/Codexpp/actions/workflows/ci.yml)
 [![GitHub Codespaces'ta Aç](https://github.com/codespaces/badge.svg)](https://codespaces.new/avometre/Codexpp?quickstart=1)
 Codexpp, OpenAI Codex CLI'yi rol tabanlı ve otomasyon dostu yapılandırılmış iş akışlarına dönüştüren modüler bir genişletme çerçevesidir. Slash komutları, persona tabanlı çalışma modları ve otomatik MCP (Model Context Protocol) kurulumu ile Codex deneyimini daha üretken ve tutarlı hale getirir.
 

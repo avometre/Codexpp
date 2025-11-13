@@ -5,7 +5,6 @@
 [![PyPI](https://img.shields.io/pypi/v/codexpp)](https://pypi.org/project/codexpp/)
 [![Python](https://img.shields.io/pypi/pyversions/codexpp)](https://pypi.org/project/codexpp/)
 [![License](https://img.shields.io/pypi/l/codexpp)](LICENSE)
-[![CI](https://github.com/avometre/Codexpp/actions/workflows/ci.yml/badge.svg)](https://github.com/avometre/Codexpp/actions/workflows/ci.yml)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/avometre/Codexpp?quickstart=1)
 
 Codexpp is an extension framework that turns the OpenAI Codex CLI into a structured, persona-driven workflow engine built for repeatable delivery. It delivers reusable slash commands, persona-driven guidance, and automatic MCP (Model Context Protocol) setup to make Codex sessions more productive and consistent.
