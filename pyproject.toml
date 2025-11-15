@@ -7,7 +7,7 @@ include-package-data = true
  
  [project]
  name = "codexpp"
- version = "0.4.1"
+ version = "0.4.2"
  description = "Persona-driven command pack and MCP setup for Codex CLI"
  readme = "README.md"
  requires-python = ">=3.11"

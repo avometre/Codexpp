@@ -196,6 +196,12 @@ Yeni prompt eklemek/güncellemek için:
   - Çıktı: Uygulama Özeti; Plan ve Adımlar; Alana Göre Kod Değişiklikleri; Testler; Manuel Doğrulama; Dosya Özeti
   - Kullanım ipucu: `SPEC="<feature or task>" [NOTES="..."] [FLAG="..."]`
 
+- `cx:brainstorm`
+  - Amaç: Muğlak fikirleri çok alanlı (mimari, frontend, backend, güvenlik, devops) gereksinimlere dönüştürmek.
+  - Persona: `requirements-analyst`
+  - Çıktı: Keşif Özeti; Sokratik Keşif; Çok Alanlı Analiz; Spesifikasyon Taslağı; Doğrulama ve Uygulanabilirlik; Devretme Özeti
+  - Kullanım ipucu: `IDEA="<konsept veya özellik>" [STRATEGY=systematic|agile|enterprise] [DEPTH=shallow|normal|deep]`
+
 - `cx:review`
   - Amaç: Önceliklendirilmiş ve eyleme dönük geri bildirimlerle kıdemli seviye kod incelemesi.
   - Persona: `code-reviewer`

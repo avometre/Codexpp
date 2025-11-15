@@ -57,6 +57,13 @@ class LoaderPromptTests(unittest.TestCase):
         self.assertIn("## Hotspots & Evidence", analyze.prompt)
         self.assertNotIn("GENERAL BEHAVIOR", analyze.prompt)
 
+    def test_brainstorm_command_is_registered_with_prompt(self) -> None:
+        commands = cli.loader.load_commands()
+        self.assertIn("cx:brainstorm", commands)
+        brainstorm = commands["cx:brainstorm"]
+        self.assertIn("Brainstorm Context:", brainstorm.prompt)
+        self.assertIn("## Discovery Summary", brainstorm.prompt)
+
 
 class PersonaUtilitiesTests(unittest.TestCase):
     def test_collect_personas_filters_and_validates(self) -> None:

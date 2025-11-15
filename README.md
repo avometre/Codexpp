@@ -192,6 +192,12 @@ To customize or add prompts:
   - Output: Executive Summary; Architecture & Data Flow; Dependencies & Surfaces; Quality & Risk; Hotspots & Evidence; Recommendations & Roadmap
   - Usage hint: `TARGET=<path or scope> [CONTEXT="..."] [FOCUS="..."] [DEPTH=light|medium|deep]`
 
+- `cx:brainstorm`
+  - Purpose: Turn vague ideas into concrete, multi-domain requirements through Socratic exploration.
+  - Persona: `requirements-analyst`
+  - Output: Discovery Summary; Socratic Exploration; Multi-Domain Analysis; Specification Outline; Validation & Feasibility; Handoff Summary
+  - Usage hint: `IDEA="<concept or feature>" [STRATEGY=systematic|agile|enterprise] [DEPTH=shallow|normal|deep]`
+
 - `cx:implement`
   - Purpose: Plan and describe concrete code and test changes in small, verifiable steps.
   - Persona: `implementation-engineer`
