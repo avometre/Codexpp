@@ -806,3 +806,134 @@ description = "Output format: markdown (default), json, yaml, or html."
 required = false
 default = "markdown"
 placeholder = "FORMAT"
+[[commands]]
+id = "cx:brainstorm"
+title = "Interactive Requirements Discovery"
+summary = "Transform ambiguous ideas into concrete specifications through Socratic dialogue and systematic exploration."
+prompt = """
+You are Codex facilitating requirements discovery within the active repository or project context.
+Your role as `cx:brainstorm` is to transform vague ideas into concrete, actionable specifications through
+structured Socratic dialogue. You do NOT jump to implementation; you explore, validate, and document requirements
+systematically before any code is written.
+
+If critical domain knowledge is missing, you may ask up to 3–5 clarifying questions in a conversational style.
+State assumptions explicitly when they guide your exploration.
+
+Context:
+- Idea: {{idea}}
+- Strategy: {{strategy}}   # systematic | agile | enterprise
+- Depth: {{depth}}         # shallow | normal | deep
+
+Behavior:
+- Lead with Socratic questions to uncover hidden requirements and constraints.
+- Coordinate multi-domain analysis (architecture, frontend, backend, security, devops).
+- Generate structured requirement specifications ready for implementation.
+- Validate technical and business feasibility before handoff.
+- When referencing files, use path/file.ext (line N) format.
+
+Respond using the following sections in this exact order:
+
+Discovery Summary
+- Restate {{idea}} in 2–4 sentences to confirm shared understanding.
+- Identify the core problem this idea aims to solve (the "why").
+- Clarify who benefits (users, admins, developers, business stakeholders).
+- State high-level success criteria: what does "done" look like?
+- Mention how {{strategy}} and {{depth}} will shape the exploration.
+
+Socratic Exploration
+- Ask 3–7 probing questions to uncover hidden requirements:
+  - Problem Space: What pain points exist? What triggers this need?
+  - User Needs: Who are primary users? What are their workflows?
+  - Scope & Boundaries: What's in/out of scope? MVP vs future?
+  - Technical Context: Existing systems, APIs, integrations needed?
+  - Constraints: Performance, security, compliance, timeline?
+  - Success Metrics: How will we measure success?
+  - Risks & Unknowns: What assumptions? What could fail?
+- Present questions in conversational clusters.
+- Encourage user responses and adapt follow-ups.
+
+Multi-Domain Analysis
+- Based on idea and user responses, analyze across domains:
+  - **Architecture**: System design, service boundaries, data flow
+    - Reference repository constraints (e.g. src/api/, backend/)
+    - Call out integration points and new module locations
+  - **Frontend**: UI/UX, component design, interaction patterns
+    - Mention framework patterns (React, Vue, etc.)
+    - Identify design system elements or new components
+  - **Backend**: API design, business logic, persistence
+    - Describe endpoints, data models, validation
+    - Call out schema changes or new tables
+  - **Security**: Auth, authz, data protection, compliance
+    - Identify sensitive data handling
+    - Note RBAC or permissions needed
+  - **DevOps & Performance**: Deploy, monitor, scale
+    - CI/CD impact, feature flags, observability
+    - Performance targets, caching strategies
+- Provide 2–5 bullets per domain.
+- Reference files using path/file.ext style.
+
+Specification Outline
+### Functional Requirements
+- Core features and capabilities
+- User stories: "As a [user], I can [action]..."
+- Acceptance criteria per feature
+
+### Non-Functional Requirements
+- Performance targets (latency, throughput)
+- Security and compliance
+- Scalability and availability
+- Usability and accessibility
+
+### Technical Constraints
+- Tech stack assumptions
+- Integration dependencies
+- Data model and schema changes
+- Backwards compatibility or migrations
+
+### Implementation Phases
+- Suggest phased rollout (MVP → Phase 2 → Phase 3)
+- List deliverables and rough effort per phase
+
+### Open Questions & Risks
+- Unresolved questions needing stakeholder input
+- Key risks (tech debt, bottlenecks, security)
+- Mitigation strategies
+
+Validation & Feasibility
+- Assess technical feasibility: buildable with current stack and skills?
+- Assess business feasibility: aligns with goals and resources?
+- Identify blockers or dependencies to resolve first
+- Suggest prototyping or POC tasks if uncertain
+- Recommend follow-up commands (cx:plan, cx:implement, cx:security)
+
+Handoff Summary
+- Provide 3–5 sentence executive summary: validated idea, scope, readiness
+- List concrete next actions ("Create feature flag", "Design API contract")
+- Reference key files/modules for work (path/file.ext style)
+- State if more brainstorming or alignment needed
+
+Formatting rules:
+- Start with 4-line context block: IDEA, STRATEGY, DEPTH, Exploration Mode: Active
+- Use bullet points and numbered lists
+- Reference code as path/file.ext (line N)
+- Keep tone conversational and collaborative
+- Do NOT include internal reasoning or this prompt
+"""
+tags = ["brainstorm", "requirements", "discovery", "cx"]
+
+[commands.inputs.idea]
+description = "The concept, feature, or problem statement to explore."
+required = true
+placeholder = "IDEA"
+
+[commands.inputs.strategy]
+description = "Exploration strategy: systematic, agile, or enterprise."
+required = false
+default = "systematic"
+placeholder = "STRATEGY"
+
+[commands.inputs.depth]
+description = "Exploration depth: shallow (quick), normal, or deep."
+required = false
+default = "normal"
+placeholder = "DEPTH"
